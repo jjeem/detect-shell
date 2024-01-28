@@ -1,3 +1,7 @@
+## Notice
+
+This is a fork from [LabhanshAgrawal/detect-shell](https://github.com/LabhanshAgrawal/detect-shell).
+
 # detect-shell
 
 Detect [shells](https://en.wikipedia.org/wiki/Shell_(computing)) available on the system (based on vscode's [implementation](https://github.com/microsoft/vscode/blob/master/src/vs/workbench/contrib/terminal/node/terminal.ts))
