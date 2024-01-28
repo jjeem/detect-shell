@@ -52,8 +52,11 @@ async function detectAvailableWindowsShells(): Promise<IShellDefinition[]> {
     Cygwin: [
       `${process.env['HOMEDRIVE']}\\cygwin64\\bin\\bash.exe`,
       `${process.env['HOMEDRIVE']}\\cygwin\\bin\\bash.exe`
-    ]
+    ],
+    Nushell: [`${process.env['ProgramFiles']}\\nu\\bin\\nu.exe`]
   };
+
+  // console.table(expectedLocations);
 
   // Add all of the different kinds of PowerShells
   for await (const pwshExe of enumeratePowerShellInstallations()) {

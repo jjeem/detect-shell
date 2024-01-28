@@ -2,8 +2,8 @@ import fs from 'fs';
 import {promisify} from 'util';
 
 export function readFile(path: string): Promise<Buffer>;
-export function readFile(path: string, encoding: string): Promise<string>;
-export function readFile(path: string, encoding?: string): Promise<Buffer | string> {
+export function readFile(path: string, encoding: BufferEncoding): Promise<string>;
+export function readFile(path: string, encoding?: BufferEncoding): Promise<Buffer | string> {
   return promisify(fs.readFile)(path, encoding);
 }
 
@@ -70,6 +70,7 @@ export async function statLink(path: string): Promise<IStatAndLink> {
   } catch (error) {
     // If the link points to a non-existing file we still want
     // to return it as result while setting dangling: true flag
+    // @ts-ignore
     if (error.code === 'ENOENT' && lstats) {
       return {stat: lstats, symbolicLink: {dangling: true}};
     }

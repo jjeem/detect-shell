@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "compile": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
-    "prepare": "yarn run compile"
+    "prepare": "pnpm run compile"
   },
   "files": [
     "lib/",
@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/LabhanshAgrawal/detect-shell#readme",
   "devDependencies": {
-    "@types/node": "14.14.41",
-    "typescript": "4.2.4"
+    "@types/node": "18",
+    "typescript": "5"
   }
 }
